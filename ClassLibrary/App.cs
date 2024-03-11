@@ -60,7 +60,7 @@ namespace ClassLibrary
 
         public static string Version = "1.1";
 
-        public static string key = "X2qm7Y6RfJV5MGoaEa92XsbCwkjAiDkG";
+        public static string key = "some-random-string";
 
         public static string Encrypt(string clearText)
         {
