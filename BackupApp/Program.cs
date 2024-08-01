@@ -5,6 +5,7 @@ using System.Reflection;
 using Microsoft.Win32.TaskScheduler;
 using System.Management;
 using ClassLibrary;
+using System.Diagnostics;
 
 namespace BackupApp
 {
@@ -229,7 +230,7 @@ namespace BackupApp
                 if (isShutdown)
                 {
                     Utility.InitMessage(
-                        $"=> In {sec} sec, aceast program si PC-ul se vor autoinchide! Niciun Backup realizat!"
+                        $"=> In {sec * 6} sec, aceast program si PC-ul se vor autoinchide! Niciun Backup realizat!"
                     );
                 }
                 else
@@ -244,7 +245,8 @@ namespace BackupApp
 
             if (isShutdown)
             {
-                Shutdown();
+                //Shutdown();
+                Process.Start("ShutDown", $"/s /t {sec * 5}");
             }
 
             Environment.Exit(0);
